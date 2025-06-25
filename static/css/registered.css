@@ -1,0 +1,45 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+    font-family: Dosis;
+    src: url("../fonts/Dosis-Regular.ttf");
+    font-family: Eurostile;
+    src: url("../fonts/EurostileExtended.ttf");
+  }
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Dosis;
+  background-color: #dddddd;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+}
+#merci {
+    padding-top: 10vh;
+    width: 80vw;
+    margin: auto;
+    font-size: 4vw;
+    font-weight: 500;
+}
+#visiter {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    font-size: 2vw;
+    padding-bottom: 30vh;
+}
+.link {
+    color: inherit;
+    text-decoration: underline !important;
+}
+
+@media screen and (max-device-aspect-ratio : 1/1) {
+    #merci {
+        font-size: 9vw;
+    }
+    #visiter {
+        font-size: 7vw;
+        padding-bottom: 20vh;
+    }
+}

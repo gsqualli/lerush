@@ -1,0 +1,85 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+    font-family: Eurostile;
+    src: url("../fonts/Eurostile.ttf");
+  }
+
+body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-variant: normal;
+    letter-spacing: 0.2vw;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 1.4;
+    background-color: #dddddd;
+    background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+}
+
+#container {
+    width: 60vw;
+    margin-left : auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 7vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8vh;
+    margin-left : 0vw;
+    margin-right: 0vw;
+    margin-top: 6vh;
+    font-size: 3vw;
+    font-weight: 600;
+    line-height: 0.9;
+    color: rgba(254,94,94,0.8);
+    background: url(/img/striped_lines.png) center;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+
+h2 {
+    margin-bottom: 1.8vh;
+    margin-right: 27vw;
+    font-weight: 550;
+    font-size: 2vw;
+}
+
+.chapitre {
+    text-indent: 5%;
+}
+#contenu {
+    text-align: justify;
+    font-size: 1.3vw;
+}
+@media screen and (max-device-aspect-ratio : 1/1) {
+    #container {
+        padding-top: 10vh;
+        margin : auto;
+        width: 80%;
+    }
+    h1 {
+        margin: 0;
+        font-size: 8vw;
+        padding-top: 1vh;
+        padding-bottom: 4vh;
+    }
+    h2 {
+        font-size: 6vw;
+        width: 60vw;
+        margin: 0 auto 0 5%;
+    }
+    #contenu {
+        font-size: 4vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        line-height: 3.5vh;
+    }
+}

@@ -1,0 +1,270 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+    font-family: Dosis;
+    src: url("../fonts/Dosis-Regular.ttf");
+}
+
+@font-face {
+    font-family: Eurostile;
+    src: url("../fonts/Eurostile.ttf")
+  }
+/* Header */
+header {
+    z-index: 1;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    color: #fe5e5e;
+    height: 2vh;
+    font-family: Dosis;
+}
+
+.header {
+    width: 100%;
+    background: black;
+    position: fixed;
+    transition: top 0.5s ease-in-out;
+    top: 0;
+    padding-bottom: 0;
+}
+
+/* The sticky class is added to the header with JS when you scroll */
+.sticky {
+    background: rgba(0,0,0,0.7);
+}
+
+/* The nav-up class is added  when you scroll down, removed when you scroll up*/
+.nav-up {
+    top: -10vh !important;
+}
+
+/* In order to have not the header be on top of content */
+main {
+    padding-top: 10vh;
+}
+
+a, a:active, a:hover, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+.nav {
+    padding-top: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+#openbtn {
+    display: none;
+    height: 0;
+}
+#sidenav{
+    display: none;
+    z-index: -1;
+    height: 0;
+}
+
+#homelogo {
+    width: 15vw;
+    margin-right: auto;
+    margin-left: 5vw;
+    font-size: 2vw;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    font-family: Eurostile;
+}
+#homelogo2 {
+    display: none;
+    font-size: 2vw;
+    width: 0px;
+    height: 0px;
+    font-family: Eurostile;
+}
+#homename {
+    margin-left: 0.5vw;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+#homename2 {
+    display: none;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+#lerush {
+    width: 3vw;
+    transform: rotate(0);
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+}
+
+#lerush2 {
+    height: 0px;
+    display: none;
+    width: 0px;
+}
+
+#homelogo:hover #lerush {
+    transform: rotate(360deg);
+}
+
+
+.nav-item {
+    width: 11vw;
+    padding: 0;
+}
+
+.nav-link {
+    width: 8vw;
+    height: 10vh;
+    line-height: 10vh;
+    color: #fe5e5e;
+    font-size: 1.1vw;
+    font-weight: 900;
+    padding: 0vw;
+    text-align: center;
+}
+
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.nav-link:hover {
+    color: #000000;
+    background-color: #fe5e5e;
+}
+
+/* Mobile media query */
+@media screen and (max-device-aspect-ratio : 1/1) {
+    .nav {
+        display: none;
+        height: 0px;
+        padding: 0px;
+    }
+    .sticky {
+        background: rgba(0,0,0,0);
+    }
+    main {
+        padding-top: 0px
+    }
+    header {
+        background-color: transparent;
+    }
+    .header {
+        top: -0.5vh;
+    }
+    #homelogo2 {
+        display: inline;
+        font-size: 7vw;
+        font-weight: 900;
+        position: absolute;
+        top: 5vw;
+        left: 5vw;
+        display: flex;
+        width: 60vw;
+        height: 9vw;
+    }
+    #homename2 {
+        letter-spacing: 0.2vw;
+        padding-left: 0.5vw;
+        padding-right: 0.5vw;
+        margin-left: 0.5vw;
+        display: block;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 1vw;
+        padding-bottom: 10vw;
+    }
+    #lerush2 {
+        display: inline;
+        width: auto;
+        height: 10vw;
+    }
+    #openbtn {
+        display: inline;
+        font-size:10vw;
+        cursor:pointer;
+        position: absolute;
+        top: 0.4vw;
+        right: 5vw;
+        color: white;
+    }
+
+    #sidenav {
+        background-image: url(/img/cam-bg2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 70vw;
+        display: block;
+        background-color: black;
+        color: #fe5e5e;
+        text-decoration: none;
+        font-size: 4vw;
+        font-weight: 500;
+        color: #fe5e5e;
+        text-decoration: none;
+        overflow-x: hidden;
+        transition: 0.4s ease-in-out;
+        position: fixed;
+        top: 0;
+        right: -70vw;
+        z-index: 1;
+        background-color:#000000;
+
+    }
+    #hr {
+        border: 0;
+        clear: both;
+        width: 70%;               
+        background-color: #fe5e5e;
+        height: 2px;
+    }
+    #closebtn {
+        font-size: 550%;
+        position: absolute;
+        top: -5%;
+        right: 8%;
+    }
+    #sidenav .sidenavbtns {
+        height: 100vh;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        font-size: 150%;
+    }
+    #sidenav .navbtn {
+        width: auto;
+        margin-bottom: 2%;
+        margin-top: 6%;
+    }
+    #com {
+        margin-top: auto;
+        margin-bottom: 20vh;
+        text-align: center;
+    }
+    #suivez-nous {
+        margin: 0;
+    }
+    #reseaux {
+        margin-top: 2%;
+    }
+    .reseau {
+        width: 9vw;
+        height: 9vw;
+        margin: 2vw;
+    }
+    #instagram {
+        width: 13vw;
+        height: 13vw;
+        margin: 1vw 0 1vw 0;
+    }
+    #youtube {
+        width: 13vw;
+        height: 13vw;
+        margin: 1vw 0 1vw 0;
+    }
+}

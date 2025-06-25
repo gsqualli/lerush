@@ -1,0 +1,116 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+    font-family: Eurostile;
+    src : url("../fonts/Eurostile.ttf")
+  }
+  
+/* éditions précédentes page */
+
+body {
+    font-family: Eurostile;
+    background-color: #dddddd;
+    background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+}
+
+#container {
+    margin: 3vw 10vw 5vw 10vw;
+    width: 80vw;
+}
+
+h1 {
+    margin-left: 5vw;
+    margin-bottom: 2vw;
+    font-weight: 700;
+    font-size: 5vw;
+    color: rgba(254,94,94,0.8);
+    background: url(/img/striped_lines.png) center;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+
+h2 {
+    margin-left: -3vw;
+    margin-bottom: 1vw;
+    font-weight: 500;
+    font-size: 3vw;
+}
+
+#retour {
+    margin-bottom: 5vw;
+    text-align: justify;
+}
+
+p{
+    text-indent: 2vw;
+    font-size: 1.3vw;
+
+}
+
+.lerush {
+    font-weight: 600;
+    font-variant: small-caps;
+}
+
+.image {
+    margin: 0 2vw 0 2vw;
+    width: 32vw;
+    float: right;
+}
+
+#realisations {
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 300px;
+    justify-content: space-between;
+}
+.realisation {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.grande_realisation{
+    margin-top: 3vh;
+    margin-bottom : 5vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+.video {
+    width: 30vw;
+    height: 17vw;
+}
+
+@media screen and (max-device-aspect-ratio : 1/1) {
+    #container{
+        padding-top: 10vh;
+        margin: auto
+    }
+    h1 {
+        font-size: 10vw;
+    }
+    h2 {
+        font-size: 7vw;
+    }
+    .retour_general{
+        font-size: 4.3vw;
+    }
+    iframe {
+        width: 80vw;
+        height: auto;
+    }
+    h3 {
+        font-size: 6vw;
+    }
+    .image {
+        width: 40vw;
+    }
+}

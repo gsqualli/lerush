@@ -1,0 +1,121 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+    font-family: Eurostile;
+    src: url("../fonts/Eurostile.ttf");
+  }
+  
+/* éditions précédentes page */
+
+body {
+    font-family: Eurostile;
+    background-color: #dddddd;
+    background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+}
+
+.link, .link:hover, .link:link, .link:visited, .link:active {
+    color: white;
+    text-decoration: none;
+}
+
+.contain {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    margin-left: 27vw;
+}
+
+
+.pic {
+    width: 45vw;
+    min-width: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+
+.img {
+    width: 100%;
+    min-width: 100px;
+    box-shadow: 0px 0px 0.5vw 0.1vw gray;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    overflow: hidden;
+    transition: .5s ease;
+    transform: scale(1);
+
+}
+.img-text {
+    font-family: Dosis;
+    width: 25%;
+    font-size: 2vw;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    overflow: hidden;
+    transition: .5s ease;
+    transform: translate(20%, -980%) scale(1);
+    background-color:rgba(254, 94, 94, 0.5);
+    padding: 0vw;
+    text-shadow: 0px 0px 5px black;
+}
+
+@media screen and (min-width: 800px) {
+    /* .pic:hover .overlay {
+        transform: scale(1);
+    } */
+    .pic:hover .img-text {
+        transform: translate(+145%, -600%) scale(1.5);
+    }
+    .pic:hover .img {
+        animation: wiggle 0.3s;
+        /* transform: translate(0%, -10%) scale(1.02); */
+        -webkit-animation: wiggle 0.3s forwards; /* for less modern browsers */
+        animation: wiggle 0.3s forwards;
+    }
+    @keyframes wiggle {
+        45% { transform: translate(0%, 0%) scale(1.04);}
+        70% { transform: translate(0%, 0%) scale(1.04);}
+        100% { transform: translate(0%, 0%) scale(1.04);}
+    }
+}
+
+@media screen and (max-device-aspect-ratio : 1/1) {
+    .contain {
+        padding-top: 7vh;
+        z-index: 1;
+        margin: auto;
+    }
+    .pic {
+        margin: 7%;
+        width: 85%;
+        min-width: 100px;
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .img {
+        width: 100%;
+        min-width: 100px;
+        border-radius: 0vw;
+        border: 0.2px solid black;
+        box-shadow: 0px 0px 20px 2px black;
+    }
+    
+    .img-text {
+        font-size: 5vw;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(-10%, -20%);
+        background-color:rgba(254, 94, 94, 0.5);
+        border-radius: 1.5vw;
+        padding: 0.6vw;
+    }
+  }

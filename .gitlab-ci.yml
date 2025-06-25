@@ -1,0 +1,28 @@
+image: node:latest
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  environment:
+    name: master
+    url: https://lerush.fr
+  script:
+    # Install ssh-agent if not already installed, it is required by Docker.
+    - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+
+    # Run ssh-agent (inside the build environment)
+    - eval $(ssh-agent -s)
+
+    # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+    - ssh-add <(echo "$LERUSH_SECRET_DEPLOY_KEY")
+    # For Docker builds disable host key checking. Be aware that by adding that
+    # you are suspectible to man-in-the-middle attacks.
+    # WARNING: Use this only with the Docker executor, if you use it with shell
+    # you will overwrite your user's SSH config.
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - curl ifconfig.me && ssh -vtt sheiktiov@138.195.138.53 "cd /var/www/site-rush && git pull && npm ci && pm2 restart site-rush && sudo service nginx restart"

@@ -1,0 +1,157 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+  font-family: Dosis;
+  src: url("../fonts/Dosis-Regular.ttf");
+  font-family: Eurostile;
+  src: url("../fonts/EurostileExtended.ttf");
+}
+
+body {
+margin: 0;
+width: 100%;
+overflow-x: hidden;
+font-family: Dosis;
+background-color: #dddddd;
+background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+}
+
+h1 {
+  text-align: center;
+  font-family: Eurostile;
+  margin-bottom: 5vh;
+  margin-left : 1vw;
+  margin-right: 1vw;
+  font-size: 3.5vw;
+  font-weight: 500;
+  color: rgba(254,94,94,0.8);
+  background: url(/img/striped_lines.png) center;
+  -webkit-background-clip: text;
+  font-weight: bolder;
+  font-variant: small-caps;
+}
+#titre {
+  font-size: 4.8vw;
+  margin-bottom: 2vh;
+}
+#details {
+  margin-bottom: 2vw;
+}
+.detail {
+  font-size: 1.7vw;
+  width: 80vw;
+  margin: auto;
+  text-align: justify;
+}
+
+.col-md-4 {
+  padding: 0;
+}
+
+.col-md-1 {
+  padding: 0;
+}
+
+.col-md-7 {
+  padding: 0;
+}
+
+.row{
+  margin: 0;
+}
+
+label {
+font-weight: bold;
+padding-top: 10px;
+}
+
+#form-background {
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+#form-container {
+  position: relative;
+  width: 85%;
+  padding: 2vw;
+  transform: translate(-50%, 0);
+  left: 50%;
+  border: solid black 5px;
+}
+
+#submit {
+position: relative;
+transform: translate(-50%, -50%);
+left: 50%;
+}
+
+.form-group {
+  width: 100%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+#captcha {
+text-align: center;
+}
+#captcha-placeholder {
+display: inline-block;
+}
+
+#plus-button {
+color: black;
+font-weight: bold;
+width: auto;
+vertical-align: middle;
+}
+
+#plus-button-container {
+text-align: center;
+margin-top: 3.4em;
+}
+
+.delete-button {
+margin-top: 2.6em;
+}
+
+.row {
+margin-bottom: -10px;
+}
+
+select {
+  cursor: pointer;
+}
+
+@media screen and (max-device-aspect-ratio : 1/1) {
+  #form-background {
+    padding-top: 7vh;
+    padding-bottom: 5vh;
+  }
+  h1 {
+    padding-top: 2vh;
+    font-size: 8vw;
+    margin: 0;
+  }
+  #titre {
+    font-size: 9vw;
+    margin-bottom: 1vh;
+  }
+  #details {
+    margin-bottom: 5vw;
+  }
+  .detail {
+    font-size: 4.5vw;
+    width: 80vw;
+    margin: auto;
+    text-align: justify;
+  }
+  #form-container {
+    margin-top: 3vh;
+  }
+  #captcha-placeholder {
+    transform:scale(0.8);
+    display: inline-block;
+  }
+  #plus-button-container {
+    margin-top: 4vh;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participations</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 4px;
+        }
+        .globalLink {
+            margin: auto;
+        }
+        .globalLinkDiv {
+            width: 50%;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="width: 80%; display: inline;"><% if (title=="equipes") { %>
+        Liste des équipes
+    <% } else { if(title=="participants") { %>
+        Liste des participants
+    <% } else { %>
+        Equipe N°<%= title %> 
+    <% } } %>
+    </h1>
+    <select style="display: inline; margin: 7px 30% 7px 30%;" onchange="location = this.value;">
+        <option value="#">Année</option>
+        <% var today = new Date(); %>
+        <% const month = today.getMonth()+1 %>
+        <% const year = today.getFullYear() %>
+        <% const editionActuelle = month>6 ?  year+1 : year %>
+        <% var edition = table[1][table[0].indexOf("ANNEE")] %>
+        <% edition = (edition==parseInt(edition)?edition:editionActuelle)  %> 
+        <% for( let annee=editionActuelle; annee >= 2021 ; annee-- ) { %> 
+            <option value="/participation/equipes/<%- annee %>">
+                <%= annee %>
+            </option>
+        <% } %> 
+    </select>
+     
+    <div class="globalLinkDiv">
+        <a class="globalLink" href="/participation/participants/<%- edition %>">Liste complète des participants</a>
+        <a class="globalLink" href="/participation/equipes/<%- edition %>">Liste complète des équipes</a>    
+    </div>
+    <br>
+    <table>
+    <% for( let k = 0; k < table[0].length; k++ ) { %>
+        <th>
+            <%= table[0][k] %> 
+        </th>
+    <% } %>
+
+    <% for( let i = 1; i < table.length; i++ ) { %>
+        <tr>
+            <% for( let j = 0; j < table[i].length; j++ ) { %>
+                <td>
+                    <% if (table[0][j]=="NOM_ECOLE") { %>
+                        <a href="/participation/<%- table[i][j-1] %>/<%- edition %>" ><%= table[i][j] %>  </a>
+                    <% } else { %>
+                        <%= table[i][j] %>
+                    <% } %> 
+                </td>
+            <% } %>
+        </tr>
+    <% } %>
+    </table>
+
+</body>
+</html>

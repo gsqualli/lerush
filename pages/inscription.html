@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Rush - Inscription</title>
+    <meta name="description"
+        content="Le Rush est un concours de court métrage étudiant en 36h se déroulant à CentraleSupélec." />
+    <!-- For jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <!-- For bootstrap -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/inscription.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="icon" href="/img/favicon.ico">
+    <!-- For bootstrap-select -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- for Google ReCaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+</head>
+
+
+
+
+<body>
+
+    <!-- To import header and footer -->
+    <script>
+        var onloadCallback = () => {
+            $("#header").load("/header")
+            $("#footer").load("/footer")
+            grecaptcha.render('captcha-placeholder', {
+                'sitekey': '6LeIRtgZAAAAAFk8jgp8ctAJpK2xazsArhHdh_an'
+            })
+        }
+    </script>
+
+    <div id='header'></div>
+
+    <div id="form-background">
+
+        <h1 id="titre">Formulaire d'inscription</h1>
+        <div id="details">
+            <p class="detail">
+                Afin de participer au Rush il suffit de rassembler une équipe de 5 à 8 personnes, et une fois
+                l'inscription ci-dessous terminée nous reviendrons vers vous pour vous annoncer le thème du pré-rush. Le
+                pré-rush est un court-métrage que vous devrez réaliser pour finaliser votre inscription.
+            </p>
+            <p class="detail">
+                Les meilleures réalisations du Rush se verront décerner un prix lors de la cérémonie de clôture.
+            </p>
+            <p class="detail">
+                Les frais d'inscription s'élèvent à 15€ par personne et couvriront vos repas lors du weekend.
+            </p>
+            <p class="detail">
+                La 7ème édition du Rush se tiendra le weekend du 2 au 4 février 2024.
+            </p>
+        </div>
+        <div id="form-container">
+            <script>
+                function submitForm(event) {
+                    event.preventDefault()
+                    const url = '/inscription'
+                    const data = {
+                        nom_ecole: $('#nom_ecole').val(),
+                        nom_asso: $('#nom_asso').val(),
+                        nom_respo: $('#nom_respo').val(),
+                        mail_respo: $('#mail_respo').val(),
+                        tel_respo: $('#tel_respo').val(),
+                        moyen_contact: $('#moyen_contact').val(),
+                        moyen_paiement: $('#moyen_paiement').val(),
+                        moyen_transport: $('#moyen_transport').val(),
+                        nb_place_parking: $('#nb_place_parking').val(),
+                        acces_tf1: $('#acces_tf1').val(),
+                        nb_place_acces_tf1: $('#nb_place_acces_tf1').val(),
+
+                        nom1: $('#nom1').val(),
+                        prenom1: $('#prenom1').val(),
+                        regime1: $('#regime1').val(),
+                        nom2: $('#nom2').val(),
+                        prenom2: $('#prenom2').val(),
+                        regime2: $('#regime2').val(),
+                        nom3: $('#nom3').val(),
+                        prenom3: $('#prenom3').val(),
+                        regime3: $('#regime3').val(),
+                        nom4: $('#nom4').val(),
+                        prenom4: $('#prenom4').val(),
+                        regime4: $('#regime4').val(),
+                        nom5: $('#nom5').val(),
+                        prenom5: $('#prenom5').val(),
+                        regime5: $('#regime5').val(),
+                        nom6: $('#nom6').val(),
+                        prenom6: $('#prenom6').val(),
+                        regime6: $('#regime6').val(),
+                        nom7: $('#nom7').val(),
+                        prenom7: $('#prenom7').val(),
+                        regime7: $('#regime7').val(),
+
+                        'g-recaptcha-response': grecaptcha.getResponse()
+
+                    }
+                    $.ajax({
+                        url: '/inscription',
+                        type: 'POST',
+                        data: data,
+                        dataType: 'html',
+                        success: function (code_html, statut) {
+                            document.open();
+                            document.write(code_html);
+                            document.close();
+                        }
+                    })
+                }
+            </script>
+            <form id="form" onsubmit="submitForm(event)">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h1>Équipe</h1>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nom_ecole">Nom de l'école : </label>
+                                <input type="text" class="form-control" id="nom_ecole" name="nom_ecole"
+                                    placeholder="école" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nom_asso">Nom de l'association : </label>
+                                <input type="text" class="form-control" id="nom_asso" name="nom_asso"
+                                    placeholder="association" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nom_respo">Nom du responsable : </label>
+                                <input type="text" class="form-control" id="nom_respo" name="nom_respo"
+                                    placeholder="responsable" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="mail_respo">Adresse mail du responsable : </label>
+                                <input type="text" class="form-control" id="mail_respo" name="mail_respo"
+                                    placeholder="mail" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="tel_respo">Numéro de téléphone du responsable : </label>
+                                <input type="text" class="form-control" id="tel_respo" name="tel_respo"
+                                    placeholder="numéro" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="moyen_contact">Votre moyen de contact préféré : </label>
+                                <select id="moyen_contact" class="form-control selectpicker" name="moyen_contact" form="form"
+                                data-none-selected-text="Veuillez en choisir un" required>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="messenger">Messenger</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="moyen_paiement">Votre moyen de paiement préféré : </label>
+                                <select id="moyen_paiement" class="form-control selectpicker" name="moyen_paiement" form="form"
+                                        data-none-selected-text="Veuillez en choisir un" required>
+                                    <option value="Virement">Virement</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="moyen_transport">Moyen de transport pour arriver à CentraleSupélec : </label>
+                                <select name="moyen_transport" id="moyen_transport" class="form-control selectpicker" data-none-selected-text="Veuillez en choisir au moins un" required multiple>
+                                    <option value="a_pied">À pied</option>
+                                    <option value="bus">Bus</option>
+                                    <option value="voiture">Voiture</option>
+                                    <option value="train">Train</option>
+                                    <option value="avion">Avion</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nb_place_parking">Nombre de places de parking dont vous avez besoin à CentraleSupélec : </label>
+                                <input type="text" class="form-control" id="nb_place_parking" name="nb_place_parking"
+                                    placeholder="nombre de places de parking" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="acces_tf1">Comment l'équipe se rend à la cérémonie de lancement aux locaux de TF1 : </label>
+                                <select id="acces_tf1" class="form-control selectpicker" name="acces_tf1" form="form"
+                                        data-none-selected-text="Veuillez en choisir un" required>
+                                    <option value="propres_moyens">Par nos propres moyens</option>
+                                    <option value="bus">Départ commun de CentraleSupélec en bus</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nb_place_acces_tf1">Nombre de personnes qui voyageront en bus : </label>
+                                <input type="text" class="form-control" id="nb_place_acces_tf1" name="nb_place_acces_tf1"
+                                    placeholder="nombre de personnes" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-7">
+
+                        <h1 class="form-title">Participants</h1>
+
+                        <div id="rows-container">
+                            <div class="row" id="row1">
+                                <div class="col-md-6">
+                                    <label for="nom1">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom1" name="nom1" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom1" name="prenom1"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime1">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime1" name="regime1"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-1" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="row2" hidden>
+                                <div class="col-md-6">
+                                    <label for="nom2">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom2" name="nom2" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom2" name="prenom2"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime2">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime2" name="regime2"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-2" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="row3" hidden>
+                                <div class="col-md-6">
+                                    <label for="nom3">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom3" name="nom3" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom3" name="prenom3"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime3">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime3" name="regime3"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-3" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="row4" hidden>
+                                <div class="col-md-6">
+                                    <label for="nom4">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom4" name="nom4" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom4" name="prenom4"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime4">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime4" name="regime4"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-4" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="row5" hidden>
+                                <div class="col-md-6">
+                                    <label for="nom5">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom5" name="nom5" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom5" name="prenom5"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime5">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime5" name="regime5"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-5" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="row6" hidden>
+                                <div class="col-md-6">
+                                    <label for="nom6">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom6" name="nom6" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom6" name="prenom6"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime6">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime6" name="regime6"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-6" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="row7" hidden>
+                                <div class="col-md-6">
+                                    <label for="nom7">Nom et prénom : </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nom7" name="nom7" placeholder="nom"
+                                            form="form">
+                                        <input type="text" class="form-control" id="prenom7" name="prenom7"
+                                            placeholder="prénom" form="form">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regime7">Régime alimentaire particulier : </label>
+                                    <input type="text" class="form-control" id="regime7" name="regime7"
+                                    placeholder="aucun">
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="delete-button-7" type="button"
+                                        class="btn btn-danger delete-button">x</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="plus-button-container" class="row">
+                            <div class="col-md-12">
+                                <button id="plus-button" type="button" class="btn btn-light">＋</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <br>
+                <br>
+
+                <div id="captcha">
+                    <label for="captcha" class="prompt"></label>
+                    <div id="captcha-placeholder"></div>
+                </div>
+                <br>
+                <br>
+
+                <button type="submit" class="btn btn-primary" id="submit">Valider</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div id='footer'></div>
+    <script src="/js/inscription.js"></script>
+</body>
+
+</html>

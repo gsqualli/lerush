@@ -1,0 +1,63 @@
+<!-- To make the header sticky -->
+<script src="/js/header.js"></script>
+
+<header>
+  
+    <div id="openbtn" onclick="openNav()">&#9776;</div>
+
+    <div class="header">
+      <!-- web header  -->
+      <ul class="nav">
+        <a href="/" id="homelogo">
+          <img src="img/lerush.png" alt="Le logo du Rush" id="lerush">
+          <span id="homename">Le Rush</span>
+        </a>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentation">Présentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/editions"><span>Éditions Précédentes</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/inscription">Inscription</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contactbtn" href="#Contacts">Contact</a>
+        </li>
+      </ul>
+      
+      <!-- mobile header -->
+      <a href="/" id="homelogo2">
+        <img src="/img/lerush.png" alt="Le logo du Rush" id="lerush2">
+        <div id="homename2">Le Rush</div>
+      </a>
+      <div id="sidenav">
+        <a id="closebtn" onclick="closeNav()">&times</a>
+        <div class="sidenavbtns">
+          <a href="/" class="navbtn">Accueil</a>  
+          <hr id="hr">
+          <a href="/presentation" class="navbtn">Présentation</a>
+          <a href="/editions" class="navbtn">Éditions Précédentes</a>
+          <a href="/inscription" class="navbtn">Inscription</a>
+          <a href="#Contacts" onclick="closeNav()" class="navbtn">Contact</a>
+          <div id="com">
+            <p id="suivez-nous">Suivez nous !</p>
+            <div id="reseaux">
+              <a href="https://www.instagram.com/lerush_cs/"><img class="reseau" id="instagram" src="https://img.icons8.com/cotton/64/000000/instagram-new.png"/></a>
+              <a href="https://www.facebook.com/LeRushCS"><img class="reseau" id="facebook" src="https://img.icons8.com/dusk/64/000000/facebook-new--v2.png"/></a>
+              <a href="https://www.youtube.com/channel/UCtHN-wcczvc4LDaqgKewK_Q" ><img class="reseau" id="youtube" src="https://img.icons8.com/cotton/64/000000/youtube.png"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function openNav() {
+          document.getElementById("sidenav").style.right = "0vw";
+        }
+        
+        function closeNav() {
+          document.getElementById("sidenav").style.right = "-70vw";
+        }
+        </script>
+    </div>
+  </header>

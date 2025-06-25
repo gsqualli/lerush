@@ -1,0 +1,329 @@
+/* Main color : #fe5e5e */
+
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/Eurostile.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Eurostile;
+  background-color: black;
+}
+
+video#bgvid {
+  right: 0;
+  top: 10vh;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+#videoContainer {
+  height: 85vh;
+  width: 100%;
+}
+#photobg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photobg {
+  display: none;
+  z-index: -2;
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  
+}
+/* Page 2 */
+
+#presentation {
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #dddddd;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  justify-content: center;
+}
+.LeRush {
+  font-variant: small-caps;
+  font-family: inherit;
+  font-weight: inherit;
+}
+.ytvideo {
+  margin: 3vw;
+  width: 59vw;
+  height: 28vw;
+}
+#description {
+  width: 100vw;
+  padding-top: 2.5vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoRush {
+  width: 10%;
+  height: auto;
+  float: left;
+  margin-right: 5vw;
+}
+#descTitre {
+  font-size: 4vw;
+  font-variant: small-caps;
+}
+
+#descriptionRush {
+  font-size: 1.5vw;
+  width: 45%;
+}
+
+#descGenerale {
+  color: black;
+}
+
+.sectionTitre {
+  width: 100vw;
+  text-align: center;
+  font-size: 3.5vw;
+  font-variant: small-caps;
+  font-weight: 700;
+  padding-bottom: 4vw;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(254,94,94,0.8);
+  background: url(/img/striped_lines.png) center;
+	-webkit-background-clip: text;
+}
+.chiffres {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  font-size: 1.6vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  color: white;
+  width: 100vw;
+  background-color: #111111;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+}
+
+.chiffre {
+  width: 27%;
+  text-align: center;
+  min-width: 200px;
+}
+
+.chiffresTitre {
+  font-size: 3vw;
+  height: 4vw;
+  font-weight: 500;
+}
+
+.chiffresContenu {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 100;
+}
+
+#croque {
+  width: 3.9vw
+}
+
+.decouvertes {
+  color: black;
+  margin-top: 2vw;
+  margin-bottom: 4vw;
+  justify-content: center;
+}
+
+.decouverte {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 5vw;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90vw;
+}
+
+.image {
+  width: 36.7vw;
+  height: 19vw;
+  object-fit: cover;
+  box-shadow: 0px 0px 0.5vw 0.1vw gray;
+  overflow: hidden;
+}
+
+.imageTexte {
+  width: 32%;
+  font-size: 1.7vw;
+  text-align: center;
+}
+/* Mobile media query */
+@media screen and (max-device-aspect-ratio : 1/1) {
+  video#bgvid {
+    height: 100%;
+  }
+  #videoContainer {
+    height: 80%;
+    display: none;
+    z-index: -2;
+  }
+  .photobg {
+    display: block;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: contain;
+  }
+  #section04 {
+    width: 80vw;
+    z-index: 0;
+    position: absolute;
+    bottom: 5vh;
+    left: 10vw;
+  }
+  #photobg {
+    height: 100%;
+    width: 100vw;
+  }
+  #presentation {
+    padding-top: 100vh;
+  }
+  .ytvideo {
+    width: 90vw;
+    height: 55vw;
+  }
+  #descTitre {
+    font-size: 9vw;
+  }
+  #descriptionRush {
+    font-size: 5vw ;
+    width: 55vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+  #logoRush {
+    width: 35%;
+  }
+  .sectionTitre {
+    font-size: 7vw;
+    font-weight: 800;
+  }
+  .chiffresTitre {
+    font-size: 6vw;
+    height: 10vw;
+  }
+  
+  .chiffresContenu {
+    font-size: 5.4vw;
+    width: 100%;
+    text-align: center;
+  }
+  #croque {
+    width: 8.5vw
+  }
+  .decouverte {
+    justify-content: center;
+  }
+  .imageTexte {
+    font-size: 5vw;
+    width:70%;
+    margin-bottom: 7vw;
+  }
+  .image {
+    width: 60vw;
+    height: 35vw;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 3vw;
+  }
+  #decouverte2image {
+    transform: translate(0vw, -41vw);
+  }
+  #decouverte2texte {
+    transform: translate(0vw, 39vw);
+  }
+}
+/* scroll button animation */
+
+#section04 {
+  height: 10vh;
+}
+#section04 a {
+  color:white;
+  z-index: 2;
+  margin-right: auto;
+  margin-left: auto;
+  text-shadow: 0px 0px 1vw black;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  -webkit-transform: translate(0, 0%);
+  transform: translate(0, 0%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+#section04 p {
+  margin-bottom: 0;
+  position: relative;
+  top: 2vh;
+}
+#box {
+  position: absolute;
+  top: -5vh;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg) ;
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb04 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+.demo a:hover {
+  opacity: .6;
+}

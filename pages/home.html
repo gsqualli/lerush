@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Rush - concours de court-métrage étudiant à CentraleSupélec</title>
+    <meta name="description" content="Le Rush est un concours de court métrage étudiant en 36h se déroulant à CentraleSupélec."/>
+    <!-- For jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+    <script defer src="/js/home.js"></script>
+    <!-- For bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="icon" href="/img/favicon.ico">
+  </head>
+
+  <!-- To import header and footer -->
+
+  <script> 
+    $(function(){
+      $("#header").load("/header");
+      $("#footer").load("/footer"); 
+    });
+  </script>
+
+  <body>
+
+  <div id='header'></div>
+  
+  <main>
+    <div class="photobg"><img id="photobg" src="img/bg.jpg" alt="a bg"></div>
+    <div id="videoContainer">
+      <video autoplay muted loop preload="auto" id="bgvid">
+        <source src="/vid/teaser-rush-2k24.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div id="section04" class="demo">
+      <a id="scrollbtn" onclick="goDown()">
+        <span id="box"></span>
+        <p>
+          Découvrez <strong class="LeRush">Le Rush</strong>
+        </p>
+      </a>
+    </div>
+
+    <div id="presentation">
+
+      <div id="description">
+          <img id="logoRush" src="/img/lerush.png" alt="Logo du Rush">
+
+          <div id="descriptionRush">
+            <strong class='sectionTitre'>Le Rush</strong>
+            <br>  
+            <span id="descGenerale">Le Rush est un concours étudiant de courts-métrages en 36h se déroulant le temps d'un week-end sur le campus de CentraleSupélec</span>
+          </div>
+      </div>
+      <iframe class="ytvideo" width="736" height="414" src="https://www.youtube.com/embed/Qp4wg3Wff9w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+      <div class="chiffres">
+        <p class='sectionTitre'><strong class="LeRush">Le Rush</strong> en quelques chiffres</p>
+
+        <div class="chiffre">
+          <p class="chiffresTitre">
+            <svg width="1.4em" height="1.4em" viewBox="0 0 16 19" class="bi bi-stopwatch" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 15A6 6 0 1 0 8 3a6 6 0 0 0 0 12zm0 1A7 7 0 1 0 8 2a7 7 0 0 0 0 14z"/>
+              <path fill-rule="evenodd" d="M8 4.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5a.5.5 0 0 1 .5-.5zM5.5.5A.5.5 0 0 1 6 0h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+              <path d="M7 1h2v2H7V1z"/>
+            </svg>
+            36h
+            <svg width="1.4em" height="1.4em" viewBox="0 0 16 19" class="bi bi-stopwatch" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 15A6 6 0 1 0 8 3a6 6 0 0 0 0 12zm0 1A7 7 0 1 0 8 2a7 7 0 0 0 0 14z"/>
+              <path fill-rule="evenodd" d="M8 4.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5a.5.5 0 0 1 .5-.5zM5.5.5A.5.5 0 0 1 6 0h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+              <path d="M7 1h2v2H7V1z"/>
+            </svg>
+          </p>
+          <p class="chiffresContenu">de compétition non-stop</p>
+        </div>
+
+        <div class="chiffre">
+          <p class="chiffresTitre">
+            <svg width="1.8em" height="1.8em" viewBox="0 0 7.7 23" class="bi bi-camera-reels" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2.667 7C2.022 7 1.5 7.522 1.5 8.167v5.666c0 .645.522 1.167 1.167 1.167h6.666c.645 0 1.167-.522 1.167-1.167V8.167C10.5 7.522 9.978 7 9.333 7H2.667zM.5 8.167C.5 6.97 1.47 6 2.667 6h6.666c1.197 0 2.167.97 2.167 2.167v5.666C11.5 15.03 10.53 16 9.333 16H2.667A2.167 2.167 0 0 1 .5 13.833V8.167z"/>
+              <path fill-rule="evenodd" d="M11.25 9.15l2.768-1.605a.318.318 0 0 1 .482.263v6.384c0 .228-.26.393-.482.264l-2.767-1.605-.502.865 2.767 1.605c.859.498 1.984-.095 1.984-1.129V7.808c0-1.033-1.125-1.626-1.984-1.128L10.75 8.285l.502.865zM3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              <path fill-rule="evenodd" d="M9 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            +15
+            <svg width="1.8em" height="1.8em" viewBox="0 0 25 23" class="bi bi-camera-reels" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2.667 7C2.022 7 1.5 7.522 1.5 8.167v5.666c0 .645.522 1.167 1.167 1.167h6.666c.645 0 1.167-.522 1.167-1.167V8.167C10.5 7.522 9.978 7 9.333 7H2.667zM.5 8.167C.5 6.97 1.47 6 2.667 6h6.666c1.197 0 2.167.97 2.167 2.167v5.666C11.5 15.03 10.53 16 9.333 16H2.667A2.167 2.167 0 0 1 .5 13.833V8.167z"/>
+              <path fill-rule="evenodd" d="M11.25 9.15l2.768-1.605a.318.318 0 0 1 .482.263v6.384c0 .228-.26.393-.482.264l-2.767-1.605-.502.865 2.767 1.605c.859.498 1.984-.095 1.984-1.129V7.808c0-1.033-1.125-1.626-1.984-1.128L10.75 8.285l.502.865zM3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              <path fill-rule="evenodd" d="M9 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+          </p>
+          <p class="chiffresContenu">équipes venant de grandes écoles de toute la France pour montrer leurs talents cinématographiques</p>
+        </div>
+
+        <div class="chiffre">
+          <p class="chiffresTitre">
+            <img id='croque' src="/img/croque_b.png" alt="">
+            1,000
+            <img id='croque' src="/img/croque_b.png" alt="">
+          </p>
+          <p class="chiffresContenu">croques-monsieurs délivrés</p>
+        </div>
+        
+      </div>
+
+      <div class="decouvertes">
+        <p class="sectionTitre"><strong class="LeRush">Le Rush</strong> c'est aussi</p>
+        <div class="decouverte">
+          <img src="/img/acti.jpg" alt="le village d'acti du Rush" class="image">
+          <p class="imageTexte">Un village d'activités sur le thème du cinéma ouvert à tous les visiteurs, vous trouverez au rendez-vous de la réalité virtuelle, un tournage collaboratif et plein d'autres activités</p>
+        </div>
+
+        <div class="decouverte" >
+          <p id="decouverte2texte" class="imageTexte">Des équipes professionnelles, semi-professionnelles et amateures en compétition pour le prix final devant un jury de qualité</p>
+          <img id="decouverte2image" src="/img/jts_tournage.jpg" alt="le village d'acti du Rush" class="image">
+        </div>
+
+        <div class="decouverte">
+          <img src="/img/intv.jpg" alt="le village d'acti du Rush" class="image">
+          <p class="imageTexte">Mais surtout une expérience cinématographique inoubliable autour d'un thème inédit chaque année, et une cérémonie de clôture et de projection à couper le souffle des courts-métrages en compétition</p>
+        </div>
+      </div>
+    
+    </div>
+
+  </main>
+
+    <div id='footer'></div>
+    
+  </body>
+
+</html>
